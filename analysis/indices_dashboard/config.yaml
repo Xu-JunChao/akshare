@@ -1,0 +1,38 @@
+# Indices configuration moved to config.csv
+
+settings:
+  # 建议配置为最近半年左右，格式 'YYYY-MM-DD'
+  start_date: "2024-01-01"
+  # 输出目录
+  output_dir: "output"
+  # 是否开启回测功能
+  enable_backtest: true
+
+strategy:
+  # 均线周期
+  ma_window: 20
+  # 是否严格判断拐头 (Slope > 0)
+  strict_inflection: true
+  # [新增] 显示的均线列表
+  ma_list: [20, 60, 120]
+  # [新增] 拐头确认天数 (默认2天，即 Slope > 0 且 Yesterday_Slope > 0)
+  slope_confirmation_days: 8
+  # [新增] 是否打印信号拐点日志
+  show_signal_logs: true
+
+backtest:
+  initial_capital: 100000
+  # 短期持有费率 (< 7天)
+  commission_rate_short: 0.015
+  # 短期定义天数
+  short_term_days: 7
+
+plot:
+  # 主题: plotly_dark, plotly_white, ggplot2, seaborn, etc.
+  theme: "plotly_dark"
+  # 是否使用 SVG 渲染 (解决模糊问题)
+  use_svg: true
+  # K线图高度
+  height: 800
+  # [新增] 是否显示 BIAS 子图
+  show_bias: true

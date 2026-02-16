@@ -1,0 +1,5 @@
+code,name,enabled
+sh000001,上证指数,false
+sz399006,创业板指,false
+csi930708,中证有色,true
+sh000813,细分化工,true
